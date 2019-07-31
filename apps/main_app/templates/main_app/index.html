@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <style>
+    .container1 .row {
+    margin:30px;text-align:center;
+    }
+    .container1 .row p {
+        margin: 0 50px;
+        width : 120px;
+        height : 100px;
+        display: inline-block;
+    }
+    .container1 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    img#heart {
+        width: 80px;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-name: heartbeat;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-direction: alternate;
+        animation-duration: 0.5s;
+        animation-name: heartbeat;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    @-moz-keyframes heartbeat {
+        0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        }
+        100% {
+        -webkit-transform: scale(0.6);
+        transform: scale(0.6);
+        }
+    }
+    @keyframes heartbeat {
+        0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        }
+        100% {
+        -webkit-transform: scale(0.6);
+        transform: scale(0.6);
+        }
+    }
+
+    @keyframes swing {
+        20% {
+        transform: rotate3d(0, 0, 1, 15deg);
+        }
+
+        40% {
+        transform: rotate3d(0, 0, 1, -10deg);
+        }
+
+        60% {
+        transform: rotate3d(0, 0, 1, 5deg);
+        }
+
+        80% {
+        transform: rotate3d(0, 0, 1, -5deg);
+        }
+
+        to {
+        transform: rotate3d(0, 0, 1, 0deg);
+        }
+    }
+
+    .swing {
+        transform-origin: top center;
+        animation-name: swing;
+    }
+    p {
+        animation-duration: 10s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+    }
+    </style>
+</head>
+<body style="background-color:black">
+    
+    <div class="container1">
+
+        <div class="row">
+
+            <p class="animated swing"> <a href="/help_suicide" style="color:white; text-decoration: none">Suicide Depression</a> </p>
+
+        </div>
+
+        <div class="row">
+
+            <p class="animated swing"> <a href="/help_violence" style="color:white; text-decoration: none">Domestic Violence</a> </p>
+
+            <a href="/login_reg_page"><img id="heart" src="http://www-mes.stjohns.k12.fl.us/wp-content/uploads/2012/09/Hearts-Vortex-Heart.png" width="80" height="80" ></a> 
+
+            <p class="animated swing"> <a href="/help_homeless" style="color:white; text-decoration: none">Finance Help Homeless</a> </p>
+
+        </div>
+
+        <div class="row">
+
+            <p class="animated swing"> <a href="/help_social" style="color:white; text-decoration: none">Social Equity</a> </p>
+
+            <p class="animated swing"> <a href="/help_disability" style="color:white; text-decoration: none">Disability</a> </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</body>
+</html>

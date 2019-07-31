@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load static %}
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">  
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand-centered">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand navbar-brand-centered"><a href="#" class="title" style="text-decoration:none">Amare</a></div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-brand-centered">
+            <!-- <ul class="nav navbar-nav">
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul> -->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/log_out">Log Out</a></li>	        
+            </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="card" style="width: 18rem; margin: 20px auto;">
+        <div class="card-body">
+                <form action="https://0sx1ycrql9.execute-api.us-east-2.amazonaws.com/dev/donation" method="POST">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Donation Amount</label>
+                        <input type="number" step=".01" min="0.7" name="donation_amount" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter a donation amount.">
+                        <small id="emailHelp" class="form-text text-muted">Thank you for your donation</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary" >Submit</button>
+                </form>
+        </div>
+    </div>
+
+
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="{% static 'main_app/js/template.js' %}"></script>
+</body>
+</html>

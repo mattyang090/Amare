@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    {% load static %}
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="{% static 'main_app/css/style.css' %}">    
+    
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-brand-centered">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand navbar-brand-centered"><a href="#" class="title" style="text-decoration:none">Amare</a></div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-brand-centered">
+            <!-- <ul class="nav navbar-nav">
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>
+                <li><a href="#">Link</a></li>	        
+            </ul> -->
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="login-reg-panel">
+                <div class="login-info-box">
+                    <p style="color: white;">Have an account? Please enter your email and password below to Log In.</p>
+                    <label id="label-register" for="log-reg-show">Login</label>
+                    <input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked">
+                </div>                    
+                <div class="register-info-box">
+                    <p style="color: white;">Don't have an account? Join now to ...</p>
+                    <label id="label-login" for="log-login-show">Register</label>
+                    <input type="radio" name="active-log-panel" id="log-login-show">
+                </div>
+                                    
+                <div class="white-panel">
+                    <div class="login-show">
+                        <form action="/login_user" class="contact-form" method="post">
+                            {% csrf_token %}
+                            <h2>LOGIN</h2>
+                            <input type="text" name="email" placeholder="Email">
+                            <input type="password" name="password" placeholder="Password">
+                            <input type="submit" value="Login">
+                            <a href="">Forgot password?</a>
+                        </form>
+                    </div>
+                    <div class="register-show">
+                        <form action="/register_user" class="contact-form" method="post">
+                            {% csrf_token %}
+                            <h2>REGISTER</h2>
+                            <input type="text" name="first_name" placeholder="First Name">
+                            <input type="text" name="last_name" placeholder="Last Name">
+                            <input type="text" name="email" placeholder="Email">
+                            <input type="password" name="password" placeholder="Password">
+                            <input type="password" name="c_password" placeholder="Confirm Password">
+                            <input type="submit" value="Register">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--====== Javascripts & Jquery ======-->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="{% static 'main_app/js/template.js' %}"></script>
+</body>
+</html>
